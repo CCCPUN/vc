@@ -3,14 +3,6 @@ title: Introduction
 type: docs
 ---
 
-# Team members
-## Jherson Medina
-Interest in algorithms and data structures, likes competitive programming, is in a team with Nicolas "Klaus" Pardo.
-## Manuel Medrano
-Interested in video game and software development, everybody loves him. 
-## Nicolas Pardo
-Interest in algorithms and data structures, likes competitive programming, is in a team with Jherson "Tovarisch" Medina.
-
 # Visual Computing Template
 
 Welcome to the [UN / DISI](http://www.ingenieria.unal.edu.co/dependencias/departamentos/departamento-de-ingenieria-de-sistemas-e-industrial) _visual computing_ course template site.
