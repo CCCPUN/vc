@@ -1,7 +1,10 @@
 # Jherson Medina
 Interest in algorithms and data structures, likes competitive programming, is in a team with Nicolas "Klaus" Pardo.
 ## Optical Ilussion
-Based on  [this](https://michaelbach.de/ot/lum-contourAdapt/index.html).
+Based on  [this](https://michaelbach.de/ot/lum-contourAdapt/index.html).\
+Look at the rotating cross, onces it stops, both circles dissapear.\
+Click the image to start.
+
 {{< p5-instance-div id="1" >}}
 	let jump = 0;
 	let count = 0;
