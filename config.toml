@@ -1,4 +1,4 @@
-baseURL = "https://cccpun.github.io/vc"
+baseURL = "https://cccpun.github.io/vc/"
 languageCode = "en-us"
 title = "Visual Computing"
 theme = 'book'
