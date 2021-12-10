@@ -2,20 +2,16 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Nicolas Pardo #  Interest in algorithms and data structures, likes competitive programming, is in a team with Jherson &ldquo;Tovarisch&rdquo; Medina.
-Based on this.\
-Both yellow circles have the same size, but in every iteration looks like their size change but is an ilusion.
-Optical illusion #       function setup() { createCanvas(800, 400); frameRate(60); } function draw(){ var on = 0; background(135,135,135); if(second()%5 == 0){ if(on){ on = 0; }else{ on = 1; } } let c = color(255,204,0); fill(c); circle(200,200,60); circle(400,200,60); if(on == 1){ noFill(); circle(200,200,300); circle(400,200,70); } if(on == 0){ noFill(); circle(200,200,70); circle(400,200,300); } }      &#34;">
+<meta name=description content="Binary Space Partitioning #  Es un método para subdividir recursivamente un espacio en dos conjuntos convexos utilizando hiperplanos como particiones. Este proceso de subdivisión da lugar a una representación de los objetos dentro del espacio en forma de una estructura de datos en forma de árbol conocida como árbol BSP.
+Es un proceso genérico que consiste en dividir recursivamente una escena en dos hasta que la partición satisfaga uno o más requisitos.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="Nicolas Pardo #  Interest in algorithms and data structures, likes competitive programming, is in a team with Jherson &ldquo;Tovarisch&rdquo; Medina.
-Based on this.\
-Both yellow circles have the same size, but in every iteration looks like their size change but is an ilusion.
-Optical illusion #       function setup() { createCanvas(800, 400); frameRate(60); } function draw(){ var on = 0; background(135,135,135); if(second()%5 == 0){ if(on){ on = 0; }else{ on = 1; } } let c = color(255,204,0); fill(c); circle(200,200,60); circle(400,200,60); if(on == 1){ noFill(); circle(200,200,300); circle(400,200,70); } if(on == 0){ noFill(); circle(200,200,70); circle(400,200,300); } }      &#34;">
+<meta property="og:description" content="Binary Space Partitioning #  Es un método para subdividir recursivamente un espacio en dos conjuntos convexos utilizando hiperplanos como particiones. Este proceso de subdivisión da lugar a una representación de los objetos dentro del espacio en forma de una estructura de datos en forma de árbol conocida como árbol BSP.
+Es un proceso genérico que consiste en dividir recursivamente una escena en dos hasta que la partición satisfaga uno o más requisitos.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://cccpun.github.io/vc/docs/shortcodes/Members/nicolas/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-11-17T20:49:22-05:00">
-<title>Nicolas | Visual Computing</title>
+<meta property="og:url" content="https://cccpun.github.io/vc/docs/shortcodes/Rendering/Binary_space_parition/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2021-12-10T14:18:50-05:00">
+<title>Binary Space Parition | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
@@ -70,7 +66,7 @@ Optical illusion #       function setup() { createCanvas(800, 400); frameRate(60
 <a href=https://cccpun.github.io/vc/docs/shortcodes/Members/manuel/>Manuel</a>
 </li>
 <li>
-<a href=https://cccpun.github.io/vc/docs/shortcodes/Members/nicolas/ class=active>Nicolas</a>
+<a href=https://cccpun.github.io/vc/docs/shortcodes/Members/nicolas/>Nicolas</a>
 </li>
 </ul>
 </li>
@@ -95,7 +91,7 @@ Optical illusion #       function setup() { createCanvas(800, 400); frameRate(60
 <a href=https://cccpun.github.io/vc/docs/shortcodes/Rendering/>Rendering</a>
 <ul>
 <li>
-<a href=https://cccpun.github.io/vc/docs/shortcodes/Rendering/Binary_space_parition/>Binary Space Parition</a>
+<a href=https://cccpun.github.io/vc/docs/shortcodes/Rendering/Binary_space_parition/ class=active>Binary Space Parition</a>
 </li>
 <li>
 <a href=https://cccpun.github.io/vc/docs/shortcodes/Rendering/Bresenhams_line_algorithm/>Bresenhams Line Algorithm</a>
@@ -136,7 +132,7 @@ Blog
 <label for=menu-control>
 <img src=/vc/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>Nicolas</strong>
+<strong>Binary Space Parition</strong>
 <label for=toc-control>
 <img src=/vc/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
@@ -144,83 +140,46 @@ Blog
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#nicolas-pardo>Nicolas Pardo</a>
-<ul>
-<li><a href=#optical-illusion>Optical illusion</a></li>
-</ul>
-</li>
+<li><a href=#binary-space-partitioning>Binary Space Partitioning</a></li>
+<li><a href=#generacion>Generacion</a></li>
 </ul>
 </nav>
 </aside>
 </header>
-<article class=markdown><h1 id=nicolas-pardo>
-Nicolas Pardo
-<a class=anchor href=#nicolas-pardo>#</a>
+<article class=markdown><h1 id=binary-space-partitioning>
+Binary Space Partitioning
+<a class=anchor href=#binary-space-partitioning>#</a>
 </h1>
-<p>Interest in algorithms and data structures, likes competitive programming, is in a team with Jherson &ldquo;Tovarisch&rdquo; Medina.</p>
-<p>Based on <a href=https://michaelbach.de/ot/cog-Delboeuf/index.html>this</a>.\</p>
-<p>Both yellow circles have the same size, but in every iteration looks like their size change but is an ilusion.</p>
-<h2 id=optical-illusion>
-Optical illusion
-<a class=anchor href=#optical-illusion>#</a>
-</h2>
-<iframe id=Nicolas style=width:820px;height:425px srcdoc="
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
-            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
-            
-            
-            
-            
-            
-            <script>
-              
-
-    function setup() {
-    createCanvas(800, 400);
-    frameRate(60);
-    }
-
-    function draw(){
-        var on = 0;
-        background(135,135,135);
-        if(second()%5 == 0){
-            if(on){
-                on = 0;
-            }else{
-                on = 1;
-            }
-        }
-        let c = color(255,204,0);
-        fill(c);
-        circle(200,200,60);
-        circle(400,200,60);
-        if(on == 1){
-            noFill();
-            circle(200,200,300);
-            circle(400,200,70);
-        }
-        if(on == 0){
-            noFill();
-            circle(200,200,70);
-            circle(400,200,300);
-        }
-    }
-
-            </script>
-          </head>
-          <body>
-          </body>
-        </html>
-      "></iframe>
+<p>Es un método para subdividir recursivamente un espacio en dos conjuntos convexos utilizando hiperplanos como particiones. Este proceso de subdivisión da lugar a una representación de los objetos dentro del espacio en forma de una estructura de datos en forma de árbol conocida como árbol BSP.</p>
+<p>Es un proceso genérico que consiste en dividir recursivamente una escena en dos hasta que la partición satisfaga uno o más requisitos. Puede considerarse una generalización de otras estructuras espaciales en forma de árbol, en las que los hiperplanos que dividen el espacio pueden tener cualquier orientación, en lugar de estar alineados con los ejes de coordenadas. Cuando se utiliza en gráficos para representar escenas compuestas por polígonos planos, los planos de partición se eligen frecuentemente para que coincidan con los planos definidos por los polígonos de la escena.</p>
+<div style=text-align:center>
+<img src=https://upload.wikimedia.org/wikipedia/commons/8/81/Binary_space_partition.png alt="Markdown Monster icon" style=width:100hv;margin-bottom:1s0px>
+</div>
+<h1 id=generacion>
+Generacion
+<a class=anchor href=#generacion>#</a>
+</h1>
+<p>El uso canónico de un árbol BSP es para renderizar polígonos (que son de doble cara, es decir, sin eliminación de la cara posterior) con el algoritmo del pintor. Cada polígono se designa con una cara frontal y una cara trasera que puede elegirse arbitrariamente y que sólo afecta a la estructura del árbol, pero no al resultado requerido. Dicho árbol se construye a partir de una lista no ordenada de todos los polígonos de una escena. El algoritmo recursivo para la construcción de un árbol BSP a partir de esa lista de polígonos es:</p>
+<ol>
+<li>Elijir un polígono P de la lista.</li>
+<li>Haz un nodo N en el árbol BSP, y añade P a la lista de polígonos en ese nodo.</li>
+<li>Para cada otro polígono de la lista:
+<ol>
+<li>Si ese polígono está totalmente delante del plano que contiene a P, mueva ese polígono a la lista de nodos delante de P.</li>
+<li>Si ese polígono está completamente detrás del plano que contiene a P, mueva ese polígono a la lista de nodos detrás de P.</li>
+<li>Si ese polígono es intersecado por el plano que contiene a P, dividirlo en dos polígonos y moverlos a las respectivas listas de polígonos detrás y delante de P.</li>
+</ol>
+</li>
+<li>Si ese polígono se encuentra en el plano que contiene a P, añádalo a la lista de polígonos en el nodo N.</li>
+<li>Aplique este algoritmo a la lista de polígonos delante de P.</li>
+<li>Aplicar este algoritmo a la lista de polígonos detrás de P.</li>
+</ol>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/CCCPUN/vc/commit/7605bf9324d13062bf6338d40165ba99d0cf8921 title="Last modified by Jherson Medina | November 18, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/CCCPUN/vc/commit/3a1989e772ef198432d723b84f523e75500431f1 title="Last modified by Jherson Medina | December 10, 2021" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
-<span>November 18, 2021</span>
+<span>December 10, 2021</span>
 </a>
 </div>
 </div>
@@ -234,11 +193,8 @@ Optical illusion
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#nicolas-pardo>Nicolas Pardo</a>
-<ul>
-<li><a href=#optical-illusion>Optical illusion</a></li>
-</ul>
-</li>
+<li><a href=#binary-space-partitioning>Binary Space Partitioning</a></li>
+<li><a href=#generacion>Generacion</a></li>
 </ul>
 </nav>
 </div>
