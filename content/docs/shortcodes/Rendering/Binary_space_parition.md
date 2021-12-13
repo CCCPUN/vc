@@ -24,3 +24,7 @@ El uso canónico de un árbol BSP es para renderizar polígonos (que son de dobl
 4. Si ese polígono se encuentra en el plano que contiene a P, añádalo a la lista de polígonos en el nodo N.
 5. Aplique este algoritmo a la lista de polígonos delante de P.
 6. Aplicar este algoritmo a la lista de polígonos detrás de P.
+
+# Referencias
+
+1. [Binary Space Parition](https://en.wikipedia.org/wiki/Binary_space_partitioning).
