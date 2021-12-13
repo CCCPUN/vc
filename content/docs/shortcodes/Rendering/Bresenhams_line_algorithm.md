@@ -79,3 +79,8 @@ function bresenhamLine(x0, y0, x1, y1) {
   }
 }
 {{< /p5-global-iframe >}}
+
+# Referencias
+1. [Geeks for geeks - Bresenhams line algorithm](https://www.geeksforgeeks.org/bresenhams-line-generation-algorithm/).  
+2. [P5 implementation](https://editor.p5js.org/hanxyn888@gmail.com/sketches/2gjhBoXsc).  
+
