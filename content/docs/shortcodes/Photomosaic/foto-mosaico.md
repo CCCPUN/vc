@@ -14,7 +14,7 @@ En el proceso de creacion de imagen se toma el color que le correspondia a cada 
 
 Lo primero que se hace es crear una imagen que se va encargar de tener todas las imagenes del tamaño de las piezas que va a estar creado el mosaico, para esto lo primero que se hace es que se cargan todas las imagenes y se hace un proceso muy parecido para la version sin hardware, se cargan todas las imagenes se calcula el valor promedio de cada imagen en caso de ser necesario y se guarda en un archivo esa informacion, pero a differencia de la version sin hardware ahora se crea una imagen que va a estar compuesta por todas las imagenes pero del tamaño de la pieza, es decir si la imagen era por ejemplo de tamaño 100x80 y el tamaño de la pieza del mosaico es de 10x10 entonces esa imagenes de 100x80 se reajusta a un tamaño de 10x10 y se agrega a la imagen que va a contener todas las imagenes, como se puede ver acontinuacion.
 
-> :P5 sketch=/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/imagesp5.js, height=60
+> :P5 sketch=/imaging-hardware/foto-mosaico/imagesp5.js, height=60
 
 Esto se hace ya que todos estos procesos son muy demorados pero independientes de la imagen que se va a representar en la imagen del mosaico, entonces se puede aprovechar ese hecho para hacer el pre calculo y luego poder utilizar esa informacion para crear diferentes mosaicos.
 
@@ -36,7 +36,7 @@ ahora estamos ubicados en la posicion exacta donde empieza esta imagen en pixele
 >
 > > :Tab title=Result
 > >
-> > > :P5 sketch=/docs/sketches/imaging-hardware/foto-mosaico/mosaic_hardware.js, width=512, height=512
+> > > :P5 sketch=/imaging-hardware/foto-mosaico/mosaic_hardware.js, width=512, height=512
 >
 > > :Tab title=P5js
 > >
