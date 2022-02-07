@@ -6,7 +6,7 @@ let nImages;
 function preload() {
     //img = createVideo('/vc/sketches/video1.mp4');
     //img.hide();
-    img=loadImage('/vc/sketches/mainimage.jpg')
+    img=loadImage('/vc/content/sketches/mainimage.jpg')
     alpha0 = loadImage('/vc/content/sketches/amarillo.png')
     alpha1 = loadImage('/vc/content/sketches/azul.jpg')
     alpha2 = loadImage('/vc/content/sketches/blanco.jpg')
