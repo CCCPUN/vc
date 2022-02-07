@@ -11,7 +11,7 @@ function preload() {
     img=loadImage('/vc/sketches/lenna.png')
 
     //carga de iamgtenes que haran parte del shader
-    alpha0 = loadImage('/vc/sketches/amarillo.jpg')
+    /*alpha0 = loadImage('/vc/sketches/amarillo.jpg')
     alpha1 = loadImage('/vc/sketches/azul.jpg')
     alpha2 = loadImage('/vc/sketches/blanco.jpg')
     alpha3 = loadImage('/vc/sketches/cyan.jpg')
@@ -23,8 +23,12 @@ function preload() {
     alpha9 = loadImage('/vc/sketches/verde.jpg')
     alpha10 = loadImage('/vc/sketches/gris.jpg')
     alpha11 = loadImage('/vc/sketches/cafe.jpg')
-    alpha12 = loadImage('/vc/sketches/fucsia.jpg')
-    images=[alpha0,alpha1,alpha2,alpha3,alpha4,alpha5,alpha6,alpha7,alpha8,alpha9,alpha10,alpha11,alpha12]
+    alpha12 = loadImage('/vc/sketches/fucsia.jpg')*/
+
+    for (let i = 1; i <= 13; i++) {
+      images.push(loadImage(`/sketches/shaders/images/p${i}.jpg`));
+    }
+    //images=[alpha0,alpha1,alpha2,alpha3,alpha4,alpha5,alpha6,alpha7,alpha8,alpha9,alpha10,alpha11,alpha12]
     
     //vector de imagenes
     nImages=images.length;
