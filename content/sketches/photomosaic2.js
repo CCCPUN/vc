@@ -25,8 +25,11 @@ function preload() {
     alpha11 = loadImage('/vc/sketches/cafe.jpg')
     alpha12 = loadImage('/vc/sketches/fucsia.jpg')*/
 
+    images = []
     for (let i = 1; i <= 13; i++) {
+      console.log(images);
       images.push(loadImage(`/vc/sketches/images/p${i}.jpg`));
+
     }
     //images=[alpha0,alpha1,alpha2,alpha3,alpha4,alpha5,alpha6,alpha7,alpha8,alpha9,alpha10,alpha11,alpha12]
     
