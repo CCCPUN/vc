@@ -30,42 +30,42 @@ void main() {
    
     switch(inx){
     case 0:
-        gl_FragColor = texture2D (imge0, symbolCoord);
+        gl_FragColor = texture2D(imge0, symbolCoord);
         break;
     case 1:
-        gl_FragColor = texture2D (imge1, symbolCoord);
+        gl_FragColor = texture2D(imge1, symbolCoord);
         break;
     case 2:
-        gl_FragColor = texture2D (imge2, symbolCoord);
+        gl_FragColor = texture2D(imge2, symbolCoord);
         break;
     case 3:
-        gl_FragColor = texture2D (imge3, symbolCoord);
+        gl_FragColor = texture2D(imge3, symbolCoord);
         break;
     case 4:
-        gl_FragColor = texture2D (imge4, symbolCoord);
+        gl_FragColor = texture2D(imge4, symbolCoord);
         break;
     case 5:
-        gl_FragColor = texture2D (imge5, symbolCoord);
+        gl_FragColor = texture2D(imge5, symbolCoord);
         break;
     case 6:
-        gl_FragColor = texture2D (imge6, symbolCoord);
+        gl_FragColor = texture2D(imge6, symbolCoord);
         break;
     case 7:
-        gl_FragColor = texture2D (imge7, symbolCoord);
+        gl_FragColor = texture2D(imge7, symbolCoord);
         break;
     case 8:
-        gl_FragColor = texture2D (imge8, symbolCoord);
+        gl_FragColor = texture2D(imge8, symbolCoord);
         break;
     case 9:
-        gl_FragColor = texture2D (imge9, symbolCoord);
+        gl_FragColor = texture2D(imge9, symbolCoord);
         break
     case 10:
-        gl_FragColor = texture2D (imge10, symbolCoord);
+        gl_FragColor = texture2D(imge10, symbolCoord);
         break;
     case 11:
-        gl_FragColor = texture2D (imge11, symbolCoord);
+        gl_FragColor = texture2D(imge11, symbolCoord);
         break;
     default:
-        gl_FragColor = texture2D (imge12, symbolCoord);
+        gl_FragColor = texture2D(imge12, symbolCoord);
     } 
 }
