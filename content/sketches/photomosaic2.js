@@ -6,20 +6,20 @@ let nImages;
 function preload() {
     //img = createVideo('/vc/sketches/video1.mp4');
     //img.hide();
-    img=loadImage('/vc/sketches/mosaico.jpeg')
-    alpha0 = loadImage('/vc/sketches/img0.jpeg')
-    alpha1 = loadImage('/vc/sketches/img1.jpeg')
-    alpha2 = loadImage('/vc/sketches/img2.jpeg')
-    alpha3 = loadImage('/vc/sketches/img3.jpeg')
-    alpha4 = loadImage('/vc/sketches/img4.jpeg')
-    alpha5 = loadImage('/vc/sketches/img5.jpeg')
-    alpha6 = loadImage('/vc/sketches/img13.jpeg')
-    alpha7 = loadImage('/vc/sketches/img7.jpeg')
-    alpha8 = loadImage('/vc/sketches/img8.jpeg')
-    alpha9 = loadImage('/vc/sketches/img9.jpeg')
-    alpha10 = loadImage('/vc/sketches/img10.jpeg')
-    alpha11 = loadImage('/vc/sketches/img11.jpeg')
-    alpha12 = loadImage('/vc/sketches/img12.jpeg')
+    img=loadImage('/vc/sketches/mainimage.jpg')
+    alpha0 = loadImage('/vc/sketches/amarillo.png')
+    alpha1 = loadImage('/vc/sketches/azul.jpg')
+    alpha2 = loadImage('/vc/sketches/blanco.jpg')
+    alpha3 = loadImage('/vc/sketches/cyan.jpeg')
+    alpha4 = loadImage('/vc/sketches/morado.jpg')
+    alpha5 = loadImage('/vc/sketches/naranja.jpg')
+    alpha6 = loadImage('/vc/sketches/negro.jpg')
+    alpha7 = loadImage('/vc/sketches/rojo.jpg')
+    alpha8 = loadImage('/vc/sketches/rosado.jpeg')
+    alpha9 = loadImage('/vc/sketches/verde.jpg')
+    alpha10 = loadImage('/vc/sketches/gris.jpg')
+    alpha11 = loadImage('/vc/sketches/cafe.jpg')
+    alpha12 = loadImage('/vc/sketches/fucsia.jpg')
     images=[alpha0,alpha1,alpha2,alpha3,alpha4,alpha5,alpha6,alpha7,alpha8,alpha9,alpha10,alpha11,alpha12]
 
     nImages=images.length;
