@@ -29,42 +29,42 @@ void main() {
     int inx = int((mean * lngImg+0.001));
    
     if(inx == 0){
-        gl_FragColor = texture2D(image0,symbolCoord);
+        gl_FragColor = texture2D(imge0,symbolCoord);
     }
     if(inx == 1){
-        gl_FragColor = texture2D(image1,symbolCoord);
+        gl_FragColor = texture2D(imge1,symbolCoord);
     }
     if(inx == 2){
-        gl_FragColor = texture2D(image2,symbolCoord);
+        gl_FragColor = texture2D(imge2,symbolCoord);
     }
     if(inx == 3){
-        gl_FragColor = texture2D(image3,symbolCoord);
+        gl_FragColor = texture2D(imge3,symbolCoord);
     }
     if(inx == 4){
-        gl_FragColor = texture2D(image4,symbolCoord);
+        gl_FragColor = texture2D(imge4,symbolCoord);
     }
     if(inx == 5){
-        gl_FragColor = texture2D(image5,symbolCoord);
+        gl_FragColor = texture2D(imge5,symbolCoord);
     }
     if(inx == 6){
-        gl_FragColor = texture2D(image6,symbolCoord);
+        gl_FragColor = texture2D(imge6,symbolCoord);
     }
     if(inx == 7){
-        gl_FragColor = texture2D(image7,symbolCoord);
+        gl_FragColor = texture2D(imge7,symbolCoord);
     }
     if(inx == 8){
-        gl_FragColor = texture2D(image8,symbolCoord);
+        gl_FragColor = texture2D(imge8,symbolCoord);
     }
     if(inx == 9){
-        gl_FragColor = texture2D(image9,symbolCoord);
+        gl_FragColor = texture2D(imge9,symbolCoord);
     }
     if(inx == 10){
-        gl_FragColor = texture2D(image10,symbolCoord);
+        gl_FragColor = texture2D(imge10,symbolCoord);
     }
     if(inx == 11){
-        gl_FragColor = texture2D(image11,symbolCoord);
+        gl_FragColor = texture2D(imge11,symbolCoord);
     }
     if(inx == 12){
-        gl_FragColor = texture2D(image12,symbolCoord);
+        gl_FragColor = texture2D(imge12,symbolCoord);
     }
 }
