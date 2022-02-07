@@ -41,8 +41,8 @@ function setup() {
 
   //Se definen las dimensiones del lienzo
   checkSwitch.position(50, 50);
-  anch = 700;
-  alt = 700;
+  anch = 500;
+  alt = 500;
   createCanvas(anch, alt, WEBGL);
   textureMode(NORMAL);
   noStroke();
@@ -56,15 +56,15 @@ function setup() {
     shaderTexture.setUniform("alpha"+i.toString(), images[i]);
 
   //se crea un deslizador para variar la resolucion del video
-  slider = createSlider(2, 20, 20);
+  slider = createSlider(2, 16, 40);
   slider.position(50, 450);
   video.loop();
 }
 
 //se le da el valor de modificacion al deslizador
 function draw() {
-  let  = slider.value();
-  shaderTexture.setUniform("resolution", parseInt(700 / resSlider));
+  let resSlider = slider.value();
+  shaderTexture.setUniform("resolution", parseInt(500 / resSlider));
   beginShape();
   vertex(-anch / 2, -alt / 2, 0, 0, 0);
   vertex(anch / 2, -alt / 2, 0, 1, 0);
