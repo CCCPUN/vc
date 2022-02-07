@@ -14,7 +14,7 @@ function preload() {
       images.push(loadImage(`/vc/sketches/images/p${i}.jpg`));
     }
     lngImg=images.length;
-    shaderTexture = loadShader("/vc/sketches/shader.vert", "/vc/sketches/shader4.frag")
+    shaderTexture = loadShader("/vc/sketches/shader.vert", "/vc/sketches/shaderTexturecolor.frag")
 
     //Imagen a rasterizar
     mainBack=loadImage('/vc/sketches/lenna.png')
