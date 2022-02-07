@@ -7,23 +7,23 @@ function preload() {
     //img = createVideo('/vc/sketches/video1.mp4');
     //img.hide();
     img=loadImage('/vc/sketches/mainimage.jpg')
-    alpha0 = loadImage('/vc/sketches/amarillo.png')
-    alpha1 = loadImage('/vc/sketches/azul.jpg')
-    alpha2 = loadImage('/vc/sketches/blanco.jpg')
-    alpha3 = loadImage('/vc/sketches/cyan.jpeg')
-    alpha4 = loadImage('/vc/sketches/morado.jpg')
-    alpha5 = loadImage('/vc/sketches/naranja.jpg')
-    alpha6 = loadImage('/vc/sketches/negro.jpg')
-    alpha7 = loadImage('/vc/sketches/rojo.jpg')
-    alpha8 = loadImage('/vc/sketches/rosado.jpeg')
-    alpha9 = loadImage('/vc/sketches/verde.jpg')
-    alpha10 = loadImage('/vc/sketches/gris.jpg')
-    alpha11 = loadImage('/vc/sketches/cafe.jpg')
-    alpha12 = loadImage('/vc/sketches/fucsia.jpg')
+    alpha0 = loadImage('/vc/content/sketches/amarillo.png')
+    alpha1 = loadImage('/vc/content/sketches/azul.jpg')
+    alpha2 = loadImage('/vc/content/sketches/blanco.jpg')
+    alpha3 = loadImage('/vc/content/sketches/cyan.jpeg')
+    alpha4 = loadImage('/vc/content/sketches/morado.jpg')
+    alpha5 = loadImage('/vc/content/sketches/naranja.jpg')
+    alpha6 = loadImage('/vc/content/sketches/negro.jpg')
+    alpha7 = loadImage('/vc/content/sketches/rojo.jpg')
+    alpha8 = loadImage('/vc/content/sketches/rosado.jpeg')
+    alpha9 = loadImage('/vc/content/sketches/verde.jpg')
+    alpha10 = loadImage('/vc/content/sketches/gris.jpg')
+    alpha11 = loadImage('/vc/content/sketches/cafe.jpg')
+    alpha12 = loadImage('/vc/content/sketches/fucsia.jpg')
     images=[alpha0,alpha1,alpha2,alpha3,alpha4,alpha5,alpha6,alpha7,alpha8,alpha9,alpha10,alpha11,alpha12]
 
     nImages=images.length;
-    myShader = loadShader("/vc/sketches/shader.vert", "/vc/sketches/shader2.frag")
+    myShader = loadShader("/vc/content/sketches/shader.vert", "/vc/content/sketches/shader2.frag")
 }
 function compare(a,b){
   return a[0]-b[0];
