@@ -1,23 +1,22 @@
-let anch;
-let alt;
-let lngImg;
-
-let shaderTexture;
-
+let W;
+let H;
 let slider;
-let checkSwitch;
-function preload() {  
-    //cargan de iamgenes que haran parte del shader
+let myShader;
+let nImages;
+let enableVideo;
+function preload() {
+    //Imagen a rasterizar
+    img=loadImage('/vc/sketches/lenna.png')
+
+    //carga de iamgtenes que haran parte del shader
     images = []
     for (let i = 1; i <= 13; i++) {
       console.log(images);
       images.push(loadImage(`/vc/sketches/images/p${i}.jpg`));
     }
-    lngImg=images.length;
-    shaderTexture = loadShader("/vc/sketches/shader.vert", "/vc/sketches/shader4.frag")
 
-    //Imagen a rasterizar
-    mainBack=loadImage('/vc/sketches/lenna.png')
+    nImages=images.length;
+    myShader = loadShader("/vc/sketches/shader.vert", "/vc/sketches/shader4.frag")
 
     //Se carga el video
     video = createVideo('/vc/sketches/sapari.mp4');
@@ -29,46 +28,48 @@ function compare(a,b){
 function setup() {
   
   //Se habilita la opcion de hacer switch al video
-  checkSwitch = createCheckbox('video', false);
-  checkSwitch.style('color', 'magenta');
-  checkSwitch.changed(() => {
-    if (checkSwitch.checked()) {
-      shaderTexture.setUniform("texture", video);
+  enable_shader = createCheckbox('enable video', false);
+  enable_shader.style('color', 'magenta');
+  enable_shader.changed(() => {
+    if (enable_shader.checked()) {
+      console.log("Checked")
+      myShader.setUniform("texture", video);
     } else {
-      shaderTexture.setUniform("texture", mainBack);
+      console.log("no Checked")
+      myShader.setUniform("texture", img);
     }
   });
 
   //Se definen las dimensiones del lienzo
-  checkSwitch.position(50, 50);
-  anch = 500;
-  alt = 500;
-  createCanvas(anch, alt, WEBGL);
+  enable_shader.position(10, 50);
+  console.log(images);
+  W = 500;
+  H = 500;
+  createCanvas(W, H, WEBGL);
   textureMode(NORMAL);
   noStroke();
-  shader(shaderTexture);
+  shader(myShader);
 
   //Se carga el shader formado por las texturas obtenidas de la imagenes 
-  shaderTexture.setUniform("texture", mainBack);
-  shaderTexture.setUniform("lngImg", float(lngImg));
+  myShader.setUniform("texture", img);
+  myShader.setUniform("nImages", float(nImages));
 
-  for(let i = 0 ;i < lngImg ;i++)
-    shaderTexture.setUniform("alpha"+i.toString(), images[i]);
-
-  //se crea un deslizador para variar la resolucion del video
+  for(let i = 0 ;i < nImages ;i++)
+    myShader.setUniform("alpha"+i.toString(), images[i]);
+  
   slider = createSlider(2, 16, 40);
-  slider.position(50, 450);
+  slider.position(100, 100);
   video.loop();
 }
 
 //se le da el valor de modificacion al deslizador
 function draw() {
-  let resSlider = slider.value();
-  shaderTexture.setUniform("resolution", parseInt(500 / resSlider));
+  let posSlider = slider.value();
+  myShader.setUniform("resolution", parseInt(500 / posSlider));
   beginShape();
-  vertex(-anch / 2, -alt / 2, 0, 0, 0);
-  vertex(anch / 2, -alt / 2, 0, 1, 0);
-  vertex(anch / 2, alt / 2, 0, 1, 1);
-  vertex(-anch / 2, alt / 2, 0, 0, 1);
+  vertex(-W / 2, -H / 2, 0, 0, 0);
+  vertex(W / 2, -H / 2, 0, 1, 0);
+  vertex(W / 2, H / 2, 0, 1, 1);
+  vertex(-W / 2, H / 2, 0, 0, 1);
   endShape();
 }
