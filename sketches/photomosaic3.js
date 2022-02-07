@@ -13,7 +13,6 @@ function preload() {
     for (let i = 1; i <= 13; i++) {
       console.log(images);
       images.push(loadImage(`/vc/sketches/images/p${i}.jpg`));
-
     }
 
     nImages=images.length;
@@ -27,7 +26,8 @@ function compare(a,b){
   return a[0]-b[0];
 }
 function setup() {
-  //Se definen las dimensiones del lienzo
+  
+  //Se habilita la opcion de hacer switch al video
   enable_shader = createCheckbox('enable video', false);
   enable_shader.style('color', 'magenta');
   enable_shader.changed(() => {
@@ -39,6 +39,8 @@ function setup() {
       myShader.setUniform("texture", img);
     }
   });
+
+  //Se definen las dimensiones del lienzo
   enable_shader.position(10, 50);
   console.log(images);
   W = 500;
@@ -48,6 +50,7 @@ function setup() {
   noStroke();
   shader(myShader);
 
+  //Se carga el shader formado por las texturas obtenidas de la imagenes 
   myShader.setUniform("texture", img);
   myShader.setUniform("nImages", float(nImages));
 
@@ -55,9 +58,11 @@ function setup() {
     myShader.setUniform("alpha"+i.toString(), images[i]);
   
   slider = createSlider(2, 16, 40);
-  slider.position(10, 10);
+  slider.position(100, 100);
   video.loop();
 }
+
+//se le da el valor de modificacion al deslizador
 function draw() {
   let posSlider = slider.value();
   myShader.setUniform("resolution", parseInt(500 / posSlider));
