@@ -14,13 +14,13 @@ En el pre procesamiento lo que se hace es crear una nueva imagen larga que conti
 En el proceso de creacion de imagen se toma el color que le correspondia a cada pixel y se busca la pieza que tiene el color promedio mas cercano al color de ese pixel y posteriormente se dibuja la pieza (imagen) que contiene ese pixel.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cccpun.github.io/vc/docs/shortcodes/Photomosaic/foto-mosaico/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-06T19:12:04-05:00">
+<meta property="article:modified_time" content="2022-02-06T19:50:27-05:00">
 <title>Foto Mosaico | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.308ed451604d53707542306804f16ef8d6129705e385a375ea5c0e34f99f44db.js integrity="sha256-MI7UUWBNU3B1QjBoBPFu+NYSlwXjhaN16lwONPmfRNs=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.f22c95b3d38afac0a5191978933cb04f01ade4ee431092a9ec2dbb0b7e33e02a.js integrity="sha256-8iyVs9OK+sClGRl4kzywTwGt5O5DEJKp7C27C34z4Co=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -180,7 +180,7 @@ Pre procesamineto
 </h2>
 <p>Lo primero que se hace es crear una imagen que se va encargar de tener todas las imagenes del tamaño de las piezas que va a estar creado el mosaico, para esto lo primero que se hace es que se cargan todas las imagenes y se hace un proceso muy parecido para la version sin hardware, se cargan todas las imagenes se calcula el valor promedio de cada imagen en caso de ser necesario y se guarda en un archivo esa informacion, pero a differencia de la version sin hardware ahora se crea una imagen que va a estar compuesta por todas las imagenes pero del tamaño de la pieza, es decir si la imagen era por ejemplo de tamaño 100x80 y el tamaño de la pieza del mosaico es de 10x10 entonces esa imagenes de 100x80 se reajusta a un tamaño de 10x10 y se agrega a la imagen que va a contener todas las imagenes, como se puede ver acontinuacion.</p>
 <blockquote>
-<p>:P5 sketch=/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/imagesp5.js, height=60</p>
+<p>:P5 sketch=/imaging-hardware/foto-mosaico/imagesp5.js, height=60</p>
 </blockquote>
 <p>Esto se hace ya que todos estos procesos son muy demorados pero independientes de la imagen que se va a representar en la imagen del mosaico, entonces se puede aprovechar ese hecho para hacer el pre calculo y luego poder utilizar esa informacion para crear diferentes mosaicos.</p>
 <h2 id=creacion-del-mosaico>
@@ -201,7 +201,7 @@ Imagen final del mosaico flamenco
 <blockquote>
 <p>:Tab title=Result</p>
 <blockquote>
-<p>:P5 sketch=/docs/sketches/imaging-hardware/foto-mosaico/mosaic_hardware.js, width=512, height=512</p>
+<p>:P5 sketch=/imaging-hardware/foto-mosaico/mosaic_hardware.js, width=512, height=512</p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -497,7 +497,7 @@ Imagen mas grande
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/CCCPUN/vc/commit/b70a212f931777983ec924a05c9a89051e22c4bb title="Last modified by mmedranom | February 7, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/CCCPUN/vc/commit/0ab444e9097abcf3cea723a9845d2c0c702e6fa9 title="Last modified by mmedranom | February 7, 2022" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
 <span>February 7, 2022</span>
 </a>
