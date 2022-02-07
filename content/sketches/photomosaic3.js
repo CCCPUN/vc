@@ -29,22 +29,20 @@ function compare(a,b){
 function setup() {
   
   //Se habilita la opcion de hacer switch al video
-  checkSwitch = createCheckbox('enable video', false);
+  checkSwitch = createCheckbox('video', false);
   checkSwitch.style('color', 'magenta');
   checkSwitch.changed(() => {
     if (checkSwitch.checked()) {
-      console.log("Checked")
       shaderTexture.setUniform("texture", video);
     } else {
-      console.log("no Checked")
       shaderTexture.setUniform("texture", mainBack);
     }
   });
 
   //Se definen las dimensiones del lienzo
   checkSwitch.position(50, 50);
-  anch = 800;
-  alt = 800;
+  anch = 700;
+  alt = 700;
   createCanvas(anch, alt, WEBGL);
   textureMode(NORMAL);
   noStroke();
@@ -65,8 +63,8 @@ function setup() {
 
 //se le da el valor de modificacion al deslizador
 function draw() {
-  let posSlider = slider.value();
-  shaderTexture.setUniform("resolution", parseInt(800 / posSlider));
+  let  = slider.value();
+  shaderTexture.setUniform("resolution", parseInt(700 / resSlider));
   beginShape();
   vertex(-anch / 2, -alt / 2, 0, 0, 0);
   vertex(anch / 2, -alt / 2, 0, 1, 0);
