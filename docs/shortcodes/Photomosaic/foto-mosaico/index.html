@@ -14,13 +14,13 @@ En el pre procesamiento lo que se hace es crear una nueva imagen larga que conti
 En el proceso de creacion de imagen se toma el color que le correspondia a cada pixel y se busca la pieza que tiene el color promedio mas cercano al color de ese pixel y posteriormente se dibuja la pieza (imagen) que contiene ese pixel.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cccpun.github.io/vc/docs/shortcodes/Photomosaic/foto-mosaico/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-06T20:23:02-05:00">
+<meta property="article:modified_time" content="2022-02-06T21:24:55-05:00">
 <title>Foto Mosaico | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.c32014f729978d41741b7195440a739e446f12f475f4088c56254a7122750112.js integrity="sha256-wyAU9ymXjUF0G3GVRApznkRvEvR19AiMViVKcSJ1ARI=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.b312e78f00f63751dcee3d1f77427e39fcc3700d46b45a5f054a753d56f2681b.js integrity="sha256-sxLnjwD2N1Hc7j0fd0J+OfzDcA1GtFpfBUp1PVbyaBs=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -165,7 +165,7 @@ Conversión de la imagen a un foto-mosaico por Hardware.
 <a class=anchor href=#conversi%c3%b3n-de-la-imagen-a-un-foto-mosaico-por-hardware>#</a>
 </h1>
 <blockquote>
-<p><a href=/docs/workshops/imaging-hardware>Volver</a></p>
+<p><a href=/content/workshops/imaging-hardware>Volver</a></p>
 </blockquote>
 <h2 id=idea-general>
 Idea general
@@ -179,18 +179,6 @@ Pre procesamineto
 <a class=anchor href=#pre-procesamineto>#</a>
 </h2>
 <p>Lo primero que se hace es crear una imagen que se va encargar de tener todas las imagenes del tamaño de las piezas que va a estar creado el mosaico, para esto lo primero que se hace es que se cargan todas las imagenes y se hace un proceso muy parecido para la version sin hardware, se cargan todas las imagenes se calcula el valor promedio de cada imagen en caso de ser necesario y se guarda en un archivo esa informacion, pero a differencia de la version sin hardware ahora se crea una imagen que va a estar compuesta por todas las imagenes pero del tamaño de la pieza, es decir si la imagen era por ejemplo de tamaño 100x80 y el tamaño de la pieza del mosaico es de 10x10 entonces esa imagenes de 100x80 se reajusta a un tamaño de 10x10 y se agrega a la imagen que va a contener todas las imagenes, como se puede ver acontinuacion.</p>
-<blockquote>
-<p>:P5 sketch=/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/imagesp5.js, height=60</p>
-</blockquote>
-<div class="book-columns flex flex-wrap">
-<div class="flex-even markdown-inner">
-<link rel=stylesheet href=/vc/katex/katex.min.css>
-<script defer src=/vc/katex/katex.min.js></script>
-<script defer src=/vc/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>
-\[ error = | r^2 - x^2 - y^2 | \]
-</span>
-</div>
-</div>
 <iframe id=imagesp5 style=width:800px;height:600px srcdoc="
         <!DOCTYPE html>
         <html>
@@ -202,12 +190,15 @@ Pre procesamineto
             
             
             
-            <script src=/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/imagesp5.js></script>
+            <script src=/vc/content/sketches/imaging-hardware/foto-mosaico/imagesp5.js></script>
           </head>
           <body>
           </body>
         </html>
       "></iframe>
+<blockquote>
+<p>:P5 sketch=/content/sketches/imaging-hardware/foto-mosaico/imagesp5.js, height=60</p>
+</blockquote>
 <p>Esto se hace ya que todos estos procesos son muy demorados pero independientes de la imagen que se va a representar en la imagen del mosaico, entonces se puede aprovechar ese hecho para hacer el pre calculo y luego poder utilizar esa informacion para crear diferentes mosaicos.</p>
 <h2 id=creacion-del-mosaico>
 Creacion del mosaico
@@ -218,13 +209,6 @@ Creacion del mosaico
 <p>Para entender mejor como se calculan y dibujan las piezas hagamos un ejemplo. Supongamos que estamos dibujando el pixel en la posicion (10,12) con un tamaño de pieza de 8 y que el color promedio corresponde a la imagen numero 13 en el listado de imagenes.</p>
 <p>Entonces para calcular ese pixel sabemos que debe estar en la imagen 13 entonces multiplicamos 13 _ tamaño de la pieza, en este caso 8, entonces tenemos 13 _ 8 = 104.</p>
 <p>ahora estamos ubicados en la posicion exacta donde empieza esta imagen en pixeles, pero la posicion del pixel que vamos a dibujar es (10,12) entonces esta desplazado un poco, para calcula ese desplazamiento sacamos modulo de la posicion de la pieza, en este caso (10 mod 8, 12 mod 8) = (2,4), ahora lo unico que nos falta es sumarle la coordenada x para quedar en la posicion exacta de la pieza, en este caso le sumariamos (2+13 * 8,4) = (106,4) y listo ahora ya tenemos la posicion del pixel que queremos dibujar, lo unico que faltaria es dibujarlo.</p>
-<div class="book-columns flex flex-wrap">
-<div class="flex-even markdown-inner">
-<span>
-\[ error = | r^2 - x^2 - y^2 | \]
-</span>
-</div>
-</div>
 <iframe id=mosaic_hardware style=width:800px;height:600px srcdoc="
         <!DOCTYPE html>
         <html>
@@ -236,7 +220,7 @@ Creacion del mosaico
             
             
             
-            <script src=/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/mosaic_hardware.js></script>
+            <script src=/vc/content/sketches/imaging-hardware/foto-mosaico/mosaic_hardware.js></script>
           </head>
           <body>
           </body>
@@ -251,7 +235,7 @@ Imagen final del mosaico flamenco
 <blockquote>
 <p>:Tab title=Result</p>
 <blockquote>
-<p>:P5 sketch=/content/docs/shortcodes/Photomosaic/maging-hardware/mosaic_hardware.js, width=512, height=512</p>
+<p>:P5 sketch=/content/sketches/imaging-hardware/foto-mosaico/mosaic_hardware.js, width=512, height=512</p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -282,22 +266,21 @@ Imagen final del mosaico flamenco
 
 <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>preload</span>() {
   <span style=color:#a6e22e>img</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadImage</span>(
-    <span style=color:#e6db74>&#34;/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/lenna.jpg&#34;</span>
+    <span style=color:#e6db74>&#34;/vc/content/sketches/imaging-hardware/foto-mosaico/lenna.jpg&#34;</span>
   );
   <span style=color:#a6e22e>images</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadImage</span>(
-    <span style=color:#e6db74>&#34;/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/images.png&#34;</span>
+    <span style=color:#e6db74>&#34;/vc/content/sketches/imaging-hardware/foto-mosaico/images.png&#34;</span>
   );
   <span style=color:#a6e22e>grayShader</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadShader</span>(
-    <span style=color:#e6db74>&#34;/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/mosaic_hardware.vert&#34;</span>,
-    <span style=color:#e6db74>&#34;/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/mosaic_hardware.frag&#34;</span>
+    <span style=color:#e6db74>&#34;/vc/content/sketches/imaging-hardware/foto-mosaico/mosaic_hardware.vert&#34;</span>,
+    <span style=color:#e6db74>&#34;/vc/content/&gt; &gt; sketches/imaging-hardware/foto-mosaico/mosaic_hardware.frag&#34;</span>
   );
   <span style=color:#a6e22e>preloadFilesColors</span>();
   <span style=color:#a6e22e>preloadAverageImg</span>();
 }
 
 <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>preloadFilesColors</span>() {
-  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dir_img</span> <span style=color:#f92672>=</span>
-    <span style=color:#e6db74>&#34;/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/images/colors/&#34;</span>;
+  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dir_img</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;/vc/content/sketches/imaging/foto-mosaico/images/colors/&#34;</span>;
   <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;=</span> <span style=color:#a6e22e>size_avg_img</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
     <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>curr_img</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadImage</span>(<span style=color:#a6e22e>dir_img</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.jpg&#34;</span>);
     <span style=color:#a6e22e>colors_img</span>.<span style=color:#a6e22e>push</span>(<span style=color:#a6e22e>curr_img</span>);
@@ -389,7 +372,7 @@ Imagen final del mosaico flamenco
 <span style=color:#75715e>//cargar informacion del color promedio de las imagenes en rgb
 </span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>preloadAverageImg</span>() {
   <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dir_txt</span> <span style=color:#f92672>=</span>
-    <span style=color:#e6db74>&#34;/vc/content/docs/shortcodes/Photomosaic/imaging/foto-mosaico/images/img_vrg_col.txt&#34;</span>;
+    <span style=color:#e6db74>&#34;/vc/content/sketches/imaging/foto-mosaico/images/img_vrg_col.txt&#34;</span>;
   <span style=color:#a6e22e>colors_avg_img</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadStrings</span>(<span style=color:#a6e22e>dir_txt</span>);
 }
 
@@ -537,17 +520,34 @@ Imagen final del mosaico flamenco
 }
 </code></pre></div></blockquote>
 </blockquote>
+<iframe id=mosaic_hardware_big style=width:800px;height:600px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script src=/vc/content/sketches/imaging-hardware/foto-mosaico/mosaic_hardware_big.js></script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe>
 <h2 id=imagen-mas-grande>
 Imagen mas grande
 <a class=anchor href=#imagen-mas-grande>#</a>
 </h2>
 <blockquote>
-<p>:P5 sketch=/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/mosaic_hardware_big.js, width=768, height=768</p>
+<p>:P5 sketch=/content/sketches/imaging-hardware/foto-mosaico/mosaic_hardware_big.js, width=768, height=768</p>
 </blockquote>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/CCCPUN/vc/commit/cd3c2ddf2f3213219cfdc2d19f5d806c42d6df17 title="Last modified by mmedranom | February 7, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/CCCPUN/vc/commit/5e021809863c4d67908b3e37bc886ad2196de1bb title="Last modified by mmedranom | February 7, 2022" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
 <span>February 7, 2022</span>
 </a>
