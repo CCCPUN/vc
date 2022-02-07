@@ -23,9 +23,7 @@ function preload() {
     video = createVideo('/vc/sketches/sapari.mp4');
     video.hide();
 }
-function compare(a,b){
-  return a[0]-b[0];
-}
+
 function setup() {
   
   //Se habilita la opcion de hacer switch al video
@@ -53,7 +51,7 @@ function setup() {
   shaderTexture.setUniform("lngImg", float(lngImg));
 
   for(let i = 0 ;i < lngImg ;i++)
-    shaderTexture.setUniform("alpha"+i.toString(), images[i]);
+    shaderTexture.setUniform("imge"+i.toString(), images[i]);
 
   //se crea un deslizador para variar la resolucion del video
   slider = createSlider(2, 16, 40);
