@@ -15,7 +15,7 @@ uniform sampler2D alpha11;
 uniform sampler2D alpha12;
 
 uniform float resolution;
-uniform float nImages;
+uniform float lngImg;
 
 // interpolated color (same name as in vertex shader)
 varying vec4 vVertexColor;
@@ -31,7 +31,7 @@ void main() {
     //float mean = 0.299*pixelColor.r + 0.587*pixelColor.g +  0.114*pixelColor.b;
     float mean = 0.333*pixelColor.r + 0.3333*pixelColor.g +  0.333*pixelColor.b;
 
-    int index = int((mean * nImages+0.001));
+    int index = int((mean * lngImg+0.001));
     //mean [0,0.15] =index =1
     if (index == 0){
         gl_FragColor = texture2D(alpha0, symbolCoord);
