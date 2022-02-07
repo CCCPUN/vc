@@ -22,7 +22,7 @@ Lo primero que se hace es crear una imagen que se va encargar de tener todas las
 
 {{< /columns >}}
 
-{{< p5-iframe id="rasterizing1" sketch= "/vc//content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/imagesp5.js">}}
+{{< p5-iframe id="rasterizing1" sketch= "/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/foto-mosaico/imagesp5.js">}}
 
 Esto se hace ya que todos estos procesos son muy demorados pero independientes de la imagen que se va a representar en la imagen del mosaico, entonces se puede aprovechar ese hecho para hacer el pre calculo y luego poder utilizar esa informacion para crear diferentes mosaicos.
 
@@ -44,7 +44,7 @@ ahora estamos ubicados en la posicion exacta donde empieza esta imagen en pixele
 
 {{< /columns >}}
 
-{{< p5-iframe id="sketch1" sketch= "/vc/content/docs/shortcodes/Photomosaic/maging-hardware/mosaic_hardware.js">}}
+{{< p5-iframe id="sketch1" sketch= "/vc/content/docs/shortcodes/Photomosaic/imaging-hardware/mosaic_hardware.js">}}
 
 ## Imagen final del mosaico flamenco
 
